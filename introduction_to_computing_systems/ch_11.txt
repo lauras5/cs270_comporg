@@ -1,14 +1,17 @@
 CHAPTER 11 : INTRODUCTION TO PROGRAMMING IN C
+
 11.1 Our Objective
     high-level programming concepts in the context of the C programming language. Review
     what we learned in previous chapters about LC-3. our primary objectives are to introduce fundamental
     high-level programming constructs w/ C.
+
 11.2 Bridging the Gap
     High-level languages allow us to give symbolic names to values.
     High-level languages provide expressiveness.
     High-level languages provide an abstraction of the underlying hardware.
     High-level languages enhance code readability.
     Many high-level languages provide safeguards against bugs. Makes work quicker.
+
 11.3 Translating High-Level Language Programs
     Interpretation and interpreters, Compilation and compilers. With interpretation,
     a translation program called an interpreter reads in the high-level language program
@@ -29,6 +32,7 @@ CHAPTER 11 : INTRODUCTION TO PROGRAMMING IN C
         but take longer to execute.
         With the compiler's assistance, the programmer can produce code that executes
         more quickly and uses memory more efficiently.
+
 11.4 The C Programming language
     Developed in 1972 by Dennis Ritchie at Bell Laboratories.
     C had a direct influence on C++ and Java.
@@ -43,6 +47,7 @@ CHAPTER 11 : INTRODUCTION TO PROGRAMMING IN C
         The Linker
              It is the linker's job to link together all object modules to form an executable image of the program.
              In UNIX many common library objects can be found in the directory /usr/lib.
+
 11.5 A Simple Example
     jump-start the process of learning C by pointing out some important aspects of a typical C program.
     11.5.1 The Function main
@@ -61,6 +66,7 @@ CHAPTER 11 : INTRODUCTION TO PROGRAMMING IN C
         <> = header file in predefined directory, "" = header file in same directory
     11.5.4 Input and Output
         printf
+
 11.6 Summary
     • High-level languages aim to make the programming process easier by connecting real-world objects
       with the low- level concepts.  computers can only execute machine code, so programs in high-level
@@ -68,15 +74,5 @@ CHAPTER 11 : INTRODUCTION TO PROGRAMMING IN C
     • The C programming language is an ideal language for a bottom-up exposure to computing because of
       its low-level nature and because of its root influence on current popular programming languages.
       The C compilation process involves a preprocessor, a compiler, and a linker.
-
-
-TERMS:
-- common control structures: if and else, for, while, repeat, break, etc.
-- object module: the machine code for one section of the entire program.
-- symbol table: the compiler's internal bookkeeping method for keeping track of all the symbolic names the
-  programmer has used in the program.
-- free format language: the amount of spacing between words and between lines within a program does not
-  change the meaning of the program
--
 
 

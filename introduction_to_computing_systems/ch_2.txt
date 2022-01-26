@@ -1,4 +1,37 @@
 CHAPTER 2 : Bits and Data Types
+
 2.1 Bits and Data Types
     2.1.1 The Bit as the Unit of Information
+        Presence of a voltage as "1" and the absence of a voltage as "0"
+        Voltages close to 0 vs voltages far from 0
+    2.1.2 Data Types
+        2's complement integers & ASCII codes
+
+2.2 Integer Data Types
+    2.2.1 Unsigned Integers
+        RANGE: 0 - 2^k - 1
+        common uses --> identifying different memory locations, count
+    2.2.2 Signed Integers
+        RANGE: -(2(k-1)) to 2^(k-1) — 1
+        positive # have leading 0, neg have leading 1
+        1's complement, take the representation of the positive number having the same magnitude,
+            and "flip" all the bits
+
+2.3 2's Compliment Integers
+     Arithmetic and logic unit (ALU) has two inputs and one output
+     Adds 2 binary patterns
+     Flip bits
+     2's complement integers that can be represented in the LC-3 are the integers
+        from -32,768 to +32,767.
+
+2.4 Binary-Decimal Conversion
+    2.4.1 Binary to Decimal Conversion
+        a7 --> 0 pos, 1 neg
+        magnitude = adding the powers of 2 that have coefficients of 1
+    2.4.2 Decimal to Binary Conversion
+
+
+
+
+
 

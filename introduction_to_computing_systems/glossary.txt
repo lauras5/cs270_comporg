@@ -1,0 +1,8 @@
+COMMON TERMS:
+
+- common control structures: if and else, for, while, repeat, break, etc.
+- object module: the machine code for one section of the entire program.
+- symbol table: the compiler's internal bookkeeping method for keeping track of all the symbolic names the
+  programmer has used in the program.
+- free format language: the amount of spacing between words and between lines within a program does not
+  change the meaning of the program

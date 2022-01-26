@@ -1,0 +1,26 @@
+CHAPTER 1
+1.1
+    All computers can perform the same functions, but the more powerful ones do it faster.
+1.2
+    Higher level languages simply allow humans to write programs more quickly and easily,
+    but they perform the same functions and are translated into lower level languages to be run.
+1.3
+    It's difficult to increase accuracy w/ analog machines, very easy on digital machines.
+1.4
+    Ambiguity
+1.5
+
+1.7 How do we get electronics to do the work?
+    Levels of Transformation:
+        Problem, Algorithm, language, machine (ISA) architecture, microarchitecture, circuits,
+        devices
+    1.7.1 The Statement of the problem
+        Natural language is filled with ambiguity.
+    1.7.2 The Algorithm:
+        Transform the problem into words a computer can understand, an algorithm.
+    1.7.5 The Micro-architecture:
+        Detailed organization of an implementation.
+
+
+
+

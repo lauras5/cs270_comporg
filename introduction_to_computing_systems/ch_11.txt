@@ -1,0 +1,82 @@
+CHAPTER 11 : INTRODUCTION TO PROGRAMMING IN C
+11.1 Our Objective
+    high-level programming concepts in the context of the C programming language. Review
+    what we learned in previous chapters about LC-3. our primary objectives are to introduce fundamental
+    high-level programming constructs w/ C.
+11.2 Bridging the Gap
+    High-level languages allow us to give symbolic names to values.
+    High-level languages provide expressiveness.
+    High-level languages provide an abstraction of the underlying hardware.
+    High-level languages enhance code readability.
+    Many high-level languages provide safeguards against bugs. Makes work quicker.
+11.3 Translating High-Level Language Programs
+    Interpretation and interpreters, Compilation and compilers. With interpretation,
+    a translation program called an interpreter reads in the high-level language program
+    and performs the operations indicated by the programmer. With compilation, the compiler completely
+    translates the high-level language program into machine language. The output of the compiler is called
+    the executable image, and it can directly execute on the hardware.
+    11.3.1 Interpretation
+        The interpreter is a virtual machine that executes the program. High-level languages that
+        are often interpreted include LISP, BASIC, Matlab, and Perl. LC-3 sim is an interpreter &
+        UNIX shell
+    11.3.2 Compilation
+        Many programming languages, including C, C++, and FORTRAN, are typically compiled.
+        The LC-3 assembler is an example of a rudimentary compiler. The compiler does not execute the
+        program, but rather only transforms it from the high-level language into the computer's
+        native machine language.
+    11.3.3 Pros and Cons
+        Debugging easier w/ interpretation & easily portable across diff computer systems,
+        but take longer to execute.
+        With the compiler's assistance, the programmer can produce code that executes
+        more quickly and uses memory more efficiently.
+11.4 The C Programming language
+    Developed in 1972 by Dennis Ritchie at Bell Laboratories.
+    C had a direct influence on C++ and Java.
+    11.4.1 The C Compiler
+        The Preprocessor
+            The C preprocessor scans through the source files (the source files contain the actual C program)
+            looking for and acting upon C preprocessor directives.
+            All preprocessor directives begin with a pound sign, #, as the first character.
+        The Compiler
+            The compiler transforms the preprocessed program into an object module.
+            The C compiler's symbol table is very similar to the symbol table maintained by the LC-3 assembler
+        The Linker
+             It is the linker's job to link together all object modules to form an executable image of the program.
+             In UNIX many common library objects can be found in the directory /usr/lib.
+11.5 A Simple Example
+    jump-start the process of learning C by pointing out some important aspects of a typical C program.
+    11.5.1 The Function main
+        the function main is where execution of the program begins
+        In ANSI C, main must return int value
+        semicolons are used to terminate declarations and statements
+    11.5.2 Formatting, Comments, and Style
+        Free format language
+        Comments in C begin with /* and end with */, span multiple lines
+        comment code, it's just the right thing to do
+    11.5.3 The C Processor
+        transforms the original C program before it is handed off to the compiler.(see 11.4.1)
+        handles substitution
+        use uppercase for the macro names
+        #include directive is replaced by the contents of another file
+        <> = header file in predefined directory, "" = header file in same directory
+    11.5.4 Input and Output
+        printf
+11.6 Summary
+    • High-level languages aim to make the programming process easier by connecting real-world objects
+      with the low- level concepts.  computers can only execute machine code, so programs in high-level
+      languages must be translated into machine code.
+    • The C programming language is an ideal language for a bottom-up exposure to computing because of
+      its low-level nature and because of its root influence on current popular programming languages.
+      The C compilation process involves a preprocessor, a compiler, and a linker.
+
+
+TERMS:
+- common control structures: if and else, for, while, repeat, break, etc.
+- object module: the machine code for one section of the entire program.
+- symbol table: the compiler's internal bookkeeping method for keeping track of all the symbolic names the
+  programmer has used in the program.
+- free format language: the amount of spacing between words and between lines within a program does not
+  change the meaning of the program
+-
+
+

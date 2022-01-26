@@ -2,7 +2,6 @@
 // Author: Laura Salcido
 // Date:   1/21/2022
 // Class:  CS270
-// Email:  lsal@colostate.edu
 
 // Include files
 #include <stdbool.h>

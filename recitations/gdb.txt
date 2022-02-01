@@ -1,0 +1,2 @@
+debugger
+gcc -g -wall -Wextra -Wfatal-errors -Wpedantic -o debug debug.c

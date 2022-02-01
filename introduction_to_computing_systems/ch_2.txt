@@ -29,6 +29,10 @@ CHAPTER 2 : Bits and Data Types
         a7 --> 0 pos, 1 neg
         magnitude = adding the powers of 2 that have coefficients of 1
     2.4.2 Decimal to Binary Conversion
+        divide by 2, remainder is added to binary
+2.5 Operations on Bits - Part 1 Arithmetic
+    2.5.1 Addition and Subtraction
+
 
 
 

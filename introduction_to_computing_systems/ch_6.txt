@@ -1,0 +1,24 @@
+CHAPTER 6: PROGRAMMING
+
+6.1 Problem Solving
+    6.1.1 Systemic Decomposition
+        natural language description of problem --> transform problem into an algorithm, step by step procedure
+        has the properties of finiteness (it terminates), definiteness (each step is precisely stated), and effective
+        computability (each step can be carried out by a computer).
+    6.1.2 The Three Constructs: Sequential, Conditional, Iterative
+         STEPWISE REFINEMENT, because the process is applied one step at a time, and each step refines one of the
+         tasks that is still too complex into a collection of simpler subtasks
+         Sequential - the computer is to carry out the first subtask completely, then go on and carry out the second subtask completely
+         Conditional - doing one of two subtasks but not both, depending on some condition.
+         Iterative - doing a subtask a number of times, but only as long as some condition is true
+    6.1.4 The Character Count Example from Chapter 5, Revisited
+         first to examine exactly what is being asked for, and what is available to help solve the problem
+
+6.2 Debugging
+    keeping track of the sequence of instructions that have been executed & results produced by each instruction
+    6.2.1 Debugging Operations
+        Set Values - deposit values in memory and in registers in order to test the execution of a part of a program in isolation
+        Execute Sequences - run, step, and set breakpoints, single stepping (execute one option then stop)
+        Display Values - 
+
+ikik iio

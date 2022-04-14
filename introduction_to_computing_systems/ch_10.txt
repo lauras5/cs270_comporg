@@ -1,0 +1,80 @@
+CHAPTER 10: The Stack
+
+dynamic is slow,
+if we have memory allocated and we dont call --> we're wasting space
+not good for recursion in functions
+
+we care about:
+    - Fast program execution
+    - efficient memory usage
+    - avoid memory fragmentation
+allocated on heap --> fragmented
+    - maintain data locality
+    - allow recursive calls
+    - support parallel execution
+    - minimize resource allocation, dont allocate memory for functions
+        that are not executed
+
+- like coin holder, LIFO
+- This indicates that the stack is initially empty.
+- The BASE address of the stack of Figure 10.3 is x3FFF.
+- The fancy name for "the rules" is the stack protocol
+-  PUSH and POP make use of Rl, R2, and R5.
+- it is the job of the calling program to save the contents of R5 before the JSR instruction
+    is executed if the calling program wishes to use the value stored there again.
+    This is an example of the caller-save situation.
+--------------------- STACK ---------------------
+The POP and PUSH routines allow us to use memory locations x3FFF through x3FFB as a five-entry stack
+** pushes value contained in R0 onto stack (top)
+PUSH        ADD R6, R6, #-1     ; stack pointer decremented
+            STR R0, R6, #0      ; store value
+
+** pops the value contained in the top of the stack and loads it into R0
+POP         LDR R0, R6, #0      ; value read
+            ADD R6, R6, #1      ; stack pointer incremented
+
+Underflow:
+    Attempting to pop items that have not been previously pushed
+
+** pop with underflow check, R5 = 0 SUCCESS, R5 = 1 FAIL
+POP         LD R1,EMPTY
+            ADD R2,R6,R1        ; compare stack
+            BRz Failure         ; pointer with x4000
+            LDR RO,R6,#0
+            ADD R6,R6,#1
+            AND R5,R5, #0       ; set R5 to 0
+            RET
+Failure     AND R5, R5, #0      ; clear R5
+            ADD R5, R5, #1      ; set R5 to 1
+            RET
+EMPTY       .FILL xCOOO         ; EMPTY <--- -x4000
+
+Overflow:
+     run out of available space and we try to push a value onto the stack
+** push with overflow check, R5 = 0 SUCCESS, R5 = 1 FAIL
+PUSH        LD R1, MAX
+            ADD R2, R6, R1      ; compare
+            BRz Failure         ; if equal, we have overflow
+            ADD R6, R6, #-1
+            STR R0, R6, #0
+            AND, R5, R5, #0     ; set R5 to 0
+            RET
+Failure     AND R5, R5, #0      ; clear R5
+            ADD R5, R5, #1      ; set R5 to 1
+            RET
+MAX         .FILL xC005         ; MAX <-- -x3FFB
+
+- enabling mechanism for interrupting the processor --> asserting the INT signal
+1. Initiate the interrupt.
+    (1) Enough of the state of the program that is running must be saved so we can later
+        continue where we left off, and
+    (2) enough of the state of the interrupt service routine must be loaded so we can
+        begin to service the interrupt request.
+    - PSR[15] indicates whether the program is running in privileged (supervisor) or unprivileged (user) mode
+    - PSR[10:8], Priority Levels: PLO (lowest) to PL7 (highest)
+    - PSR[2:0],  PSR[2] is the N bit, PSR[1] is the Z bit, and PSR[0] is the P bit
+2. Service the interrupt.
+3. Return from the interrupt.
+    - last RTI - return from interrupt
+    - opcode 1000
+    - restore PC and PSR from Supervisor stack to processor

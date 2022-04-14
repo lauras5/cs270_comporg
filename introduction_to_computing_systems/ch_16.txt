@@ -1,0 +1,72 @@
+CHAPTER 16 - POINTERS AND ARRAYS (in C)
+
+pointer --> address of a memory object
+            indirect access
+array   --> list of data arranged sequentially in memory
+
+16.2 Pointers
+    - args are always passed from caller fn to callee by VALUE
+    16.2.1 Declaring Pointer Variables
+        - int *ptr; // points to object whose type is int
+        - pointer declared as local var will not be initialized automatically
+    16.2.2 Pointer Operators
+        - address operator (&)
+        - indirection operator (*)
+        [&] generates memory address of it's operand:
+            example in C:
+                int object;
+                int *ptr;
+                object = 4;
+                ptr = &object;
+
+            example in LC3:
+                AND RO, RO, #0      // clear R0
+                ADD RO, RO, #4      // R0 = 4
+                STR RO, R5, #0      // Object = 4
+                ADD RO, R5, #0      // Generate memory address
+                STR RO, R5, #-1     // ptr = &object
+
+        [*] indirectly manipulate value of memory object
+            example in C:
+                int obj ect;
+                int *ptr;
+                object = 4;
+                ptr = &object;
+                *ptr = *ptr + 1;    // object += 1
+
+            example in LC3:
+                LDR RO, R5, #-1     // contains value of ptr
+                LDR R1, RO, #0      // R1 <- *ptr
+                ADD R1, R1, #1      // *PTR + 1
+                STR R1, RO, #0      // *PTR = *PTR + 1
+    16.2.3 Passing a Reference Using Pointers
+        (see example swap.c)
+    16.2.4 Null Pointers
+        - pointer that points to nothing
+        example:
+            int *ptr;
+            ptr = NULL;
+    16.2.5 Demystifying the Syntax
+        scanf("%d", &input);
+        - updating input, scanf needs address of input not value
+        - program will terminate w/o address operator
+    16.2.6 dividend/divisor program
+        (see example divide.c)
+
+16.3 Arrays
+    16.3.1 Declaring and using Arrays
+        int grid[10];           // array of 10 integers
+        (see example num_students.c)
+    16.3.3 Arrays as Parameters
+        - c passes arrays by reference
+        (see example average.c)
+    16.3.4 Strings in C
+        - character arrays
+        char word[10];
+            - declares array that can store up to 10 chars
+            - sentinel, end of string null --> ASCII 0
+                char word[10] = "Hello";
+                printf("%s", word);
+            - compiler automatically adds null char to end of string ^
+
+(see example insertion_sort.c)

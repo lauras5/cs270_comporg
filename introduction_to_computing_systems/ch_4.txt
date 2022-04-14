@@ -1,0 +1,70 @@
+CHAPTER 4: VON NEUMAN MODEL
+
+4.1 Basic Components
+    computer program consists of set of instructions. Instruction is the smallest piece of work
+    specified in a computer program
+    Carries out instruction or doesn't carry out instruction. No pieces.
+    5 parts: memory, processing unit, input, output, and a control unit
+    4.1.1 Memory
+        modern 2^28 by 8 bits --> address space of 2^28 unique locations, addressability of 8 bits
+        256-megabyte, byte=8bits
+        k bits, we can represent uniquely 2k items
+        Accessing memory:
+        - provide address we want to read/write
+        - to read, address --> MAR --> info --> MDR
+        - to write, write address --> MAR --> value --> MDR --> WE asserted
+    4.1.2 Processing Unit
+        processing of info on computer
+        ALU - Arithmetic and Logic Unit, performs:
+        - basic arithmetic functions (ADD & SUBTRACT)
+        - basic logic operations (bit-wise AND, OR, NOT)
+        word length - size of the quantities normally processed by the ALU
+        LC-3 word length is 16-bits
+        LC-3 has 8 registers (R0, R1, ... R7), each containing 16 bits
+    4.1.3 Input and Output
+        peripherals
+        for LC-3 we will use keyboard for input, monitor for output
+    4.1.1 Control Unit
+        Like orchestra conductor, makes parts work together
+        has instruction register to contain instructions and keep track of what is next
+        PC program counter, aka instruction pointer
+
+4.2 The LC-3: An Example von Neumann Machine
+    MEMORY: consists of the storage elements, along with the MAR for addressing individual locations
+    and the MDR for holding the contents of a memory location on its way to/from the storage
+    INPUT/OUTPUT: keyboard and monitor.
+    simple keyboard 2 registers --> data register (KBDR) & status register (KBSR)
+    KBDR holds ASCII codes of keys struck, KBSR maintaining status info of keys struck
+    simple monitor  registers: --> DDR & DSR
+    DDR holds ASCII of what to display on screen, DSR status info
+    PROCESSING UNIT: consists of a functional unit that can perform arithmetic
+    and logic operations (ALU) and eight registers (R0,... R7) for storing temporary
+    values that will be needed in the near future as operands
+    CONTROL UNIT: FSM most important
+
+4.3 Instruction Processing
+    4.3.1 The Instruction
+        made up of two parts, the opcode (what the instruction does) and the operands (who it is to do it to)
+        [15:12] contain opcode, [11:0] where operands are
+    4.3.2 The Instruction Cycle
+        sequence of steps is called the instruction cycle, and each step is referred to as a phase
+        6 Phases: fetch, decode, evaluate address, fetch operands, execute, store result
+        FETCH: obtains the next instruction from memory and loads it into the instruction register (IR) of the control unit
+            Step 1: Load the MAR with the contents of the PC, and simultaneously increment the PC.(1 MC)
+            Step 2: Interrogate memory, resulting in the instruction being placed in the MDR. (1+ MC)
+            Step 3: Load the IR with the contents of the MDR. (1 MC)
+        DECODE: examines the instruction in order to figure out what the microarchitecture is being asked to do (1MC)
+        EVALUATE ADDRESS: computes the address of the memory location that is needed to process the instruction
+        FETCH OPERANDS: obtains the source operands needed to process the instruction
+        EXECUTE: This phase carries out the execution of the instruction
+        STORE RESULT: result is written to its designated destination
+
+4.4 Changing the Sequence of Execution
+    loading the PC during the EXECUTE phase, which wipes out the incremented PC that was loaded dur- ing the FETCH phase
+    4.4.1 Control of the Instruction Cycle
+        clock cycles of phases
+
+4.5 Stopping the computer
+    If the RUN latch is in the 1 state (i.e., Q — 1), the output of the clock circuit is the same as the output
+    of the clock generator. If the RUN latch is in the 0 state (i.e., Q = 0), the output of the clock circuit is 0.
+

@@ -1,0 +1,35 @@
+ISA
+memory address space
+    - 16 bits, 2^16 locations from x0000 to xFFFF
+    - addressed used to id memory locations & memory mapped i/o DR
+
+                      -----------------------
+    x0000-x00FF -->     TRAP VECTOR TABLE
+                      -----------------------
+    x0100-x01FF -->   INTERRUPT VECTOR TABLE
+                      -----------------------
+    x0200-x2FFF -->   OS AND SUPERVISOR STACK
+                      -----------------------
+    x3000-xFDFF -->   AVAIL FOR USER PROGRAMS
+                      -----------------------
+    xFE00-xFFFF -->    DEVICE REGISTER ADDR
+                      -----------------------
+
+Bit numbering
+    - leftmost bit of mem location is bit 15
+Instructions
+    - instructions are 16 bits wide. [15:12] opcode, [11:0] more info
+Illegal opcode
+    [15:12] 1101 not specified, exception occurs
+condition codes
+    NZP --> Load instructions (LD, LDI, LDR, and LEA) and operate instructions (ADD, AND, and NOT) each load
+            a result into one of the eight general purpose registers.
+memory mapped i/o --> device register addr, LDI/STI, LDR/STR
+priority levels - LC-3 supports 8 levels. PL7 is the highest, PL0 is lowest
+                - specified current PSR[10:8]
+privilege mode - 2 modes, supervisor(privileged) and user(unprivileged)
+               - interrupt service routines execute in privileged
+               - PSR[15], 0 == Supervisor mode, 1 == User mode
+RTI executes in supervisor mode
+stack pointer --> PSR[15] = 0, R6 Supervisor Stack Pointer (SSP)
+              --> PSR[15] = 1, R6 User Stack Pointer (USP)

@@ -1,0 +1,17 @@
+CHAPTER 19 : DATA STRUCTURES
+
+19.1 Intro
+    C has 3 fund types of data: integers, characters, float point values
+    structures -> convenient way of representing obj that are rep by mult vals
+19.2 Structures
+    - define a new type
+    ** see flightType.c example **
+    19.2.2 Implementing Structures in C
+        array can be accessed in random order
+        linked list must be traversed sequentially
+        ** insertion and deletion can be cheaper to perform on a linked list than on an array.
+  - dynamic data structures that grow and shrink during program execution require some form of
+    memory allocation
+    -  malloc,calloc,realloc,and free.
+  - linked list is a dynamic structure that can be expanded or shrunk during execution
+  - connecting data elements together using pointers

@@ -1,0 +1,4 @@
+intro to logisim
+
+- only using wiring and gates in this class
+- will be working on circuits for a while

@@ -1,0 +1,23 @@
+BR instruction:
+(conditional branch)
+
+0000 0 0 0 000000000
+BR   n z p offset
+
+-------------------------------------------------------
+
+BRn LABEL           BRzp LABEL
+BRz LABEL           BRnp LABEL
+BRp LABEL           BRnz LABEL
+BR  LABEL           BRnzp LABEL
+
+-------------------------------------------------------
+
+if ((n AND N) OR (z AND Z) OR (p AND P))
+    PC = PC + SEXT(PCoffset9);     // sign extend to 16 bits
+
+-------------------------------------------------------
+
+examples:
+BRzp LOOP           ; branch to LOOP if last result zero or positive
+BR NEXT             ; unconditionally branch to NEXT

@@ -1,0 +1,27 @@
+AND instruction: (bitwise logical and)
+(used to set bits to 0, mask)
+
+0101 001 001 000 010
+AND  R1  R1   -   R2
+
+0101 001 001 1 00000    --> clear register
+AND  R1  R1    #0
+
+-------------------------------------------------------
+
+AND DR, SR1, SR2
+AND DR, SR1, imm5
+
+-------------------------------------------------------
+
+if (bit[5] == 0)
+    DR = SR AND SR;
+else
+    DR = SR1 AND SEXT(imm5);  // sign extend to 16 bits
+setcc();
+
+-------------------------------------------------------
+
+examples:
+AND R2, R3, R4      ; R2 <-- R3 AND R4
+AND R2, R3, #7      ; R2 <-- R3 AND 7

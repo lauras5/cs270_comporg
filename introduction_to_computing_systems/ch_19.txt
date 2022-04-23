@@ -15,3 +15,8 @@ CHAPTER 19 : DATA STRUCTURES
     -  malloc,calloc,realloc,and free.
   - linked list is a dynamic structure that can be expanded or shrunk during execution
   - connecting data elements together using pointers
+  - malloc --> init w/ garbage values
+  - calloc --> init w/ 0
+    - return pointer to value, or null
+    - free() deallocates mem from heap
+

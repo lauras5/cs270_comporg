@@ -32,6 +32,7 @@ CHAPTER 2 : Bits and Data Types
         divide by 2, remainder is added to binary
 2.5 Operations on Bits - Part 1 Arithmetic
     2.5.1 Addition and Subtraction
+    2.5.3 Overflow
 
 
 

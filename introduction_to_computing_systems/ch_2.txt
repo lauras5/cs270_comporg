@@ -33,8 +33,19 @@ CHAPTER 2 : Bits and Data Types
 2.5 Operations on Bits - Part 1 Arithmetic
     2.5.1 Addition and Subtraction
     2.5.3 Overflow
+2.7.2 Floating Point Data Type
+    16 bit, 2's compliment
+    Range : -32768 - 32767 (-2^15 to 2^15 - 1)
 
+    Floating Point Arithmetic:
+    1 bit for the sign (positive or negative)
+    8 bits for the range (the exponent field)
+    23 bits for precision (the fraction field)
 
+     1   <-- 8 -->     <-- 23 -->
+    [S] [ exponent ] [  fraction  ]
+
+hex notation
 
 
 

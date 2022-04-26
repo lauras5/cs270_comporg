@@ -1,0 +1,46 @@
+1. Extract exponent and Value
+X: -125.75                 Y: 63.125
+1101 0111 1101 1100        0101 0011 1110 0100
+
+(sign 15)
+sign: 1 (neg)              sign: 0 (pos)
+
+(exponent 14:10)
+exp: 10101                 exp: 10100
+20                         21
+
+(value 9:0)
+value: 1111011100          value: 1111100100
+
+sign extend, 2's comp if needed
+X value: 1111 1100 0010 0100
+Y value: 0000 0011 1110 0100
+
+2. equalize exponents
+largest exponent? --> 21 (X)
+right shift smallest to make equal
+shift Y (20) by 1
+Y = 0000 0001 1111 0010
+
+3. integer addition
+
+   0000 0001 1111 0010
+   1111 1100 0010 0100
+   -------------------
+   1111 1110 0001 0110
+
+4. 2's comp to sign-mag
+   0000 0001 1110 1010, sign is 1
+
+5. normalize result
+   exp: 10101 (21)
+   sign: 1
+   mag: 0000 0001 1110 1010
+   shift left to have one to left of radix pt
+   normalized mag: 0000 0111 1010 1000 (shift of 2)
+   normalized exp: 10011
+
+6. reassemble
+sign + exp + mag
+1100 1111 1010 1000
+
